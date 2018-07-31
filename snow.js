@@ -1,21 +1,21 @@
-window.onload = function() {
-
-
-
-    var canvas = document.getElementById('sky');
-    var ctx = canvas.getContext("2d");
-
-
-    var w = window.innerWidth;
+var canvas = document.getElementById('sky'); 
+var w = window.innerWidth;
     var h = window.innerHeight;
 
     canvas.width = w;
     canvas.height = h;
+window.ctx = canvas.getContext("2d");
+
+var mf = 100;
+
+var flakes = [];
+
+window.addEventListener("load", function() {
 
     //SNOW FLAKES CREATION
 
-    var mf = 100; //max number of snow flakes 
-    var flakes = [];
+     //max number of snow flakes 
+    
 
     for (var i = 0; i < mf; i++) {
 
@@ -26,11 +26,11 @@ window.onload = function() {
             r: Math.random() * 5 + 2,
             d: Math.random() + 1
 
-        })
-
-
-
+        });
     }
+    
+});
+
 
 
     //Draw Flakes
@@ -92,10 +92,4 @@ window.onload = function() {
 
     }
 
-    setInterval(drawFlakes, 2500);
-
-
-
-
-
-}
+    setInterval(drawFlakes, 25);
